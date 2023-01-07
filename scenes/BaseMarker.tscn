@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.781475, 0.833984, 0.0432614, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 1 )
+
+[node name="BaseMarker" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = SubResource( 2 )
+polygon = PoolVector2Array( 4, -4, 4, 4, -4, 4, -4, -4 )
+uv = PoolVector2Array( 60, 0, 60, 60, 0, 60, 0, 0 )
