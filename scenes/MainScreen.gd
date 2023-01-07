@@ -37,12 +37,24 @@ func create_bases():
         base_marker.name = pos.name
         base_marker.position = pos.position
         world_map.add_child(base_marker)
-    for pos in camp_controls_positions.get_children():
+    var location_bonus_bag: Array = [
+        Constants.LB_LABOR,
+        Constants.LB_LABOR,
+        Constants.LB_AI,
+        Constants.LB_AI,
+        Constants.LB_ADMIN,
+        Constants.LB_ADMIN,
+       ]
+    location_bonus_bag.shuffle()
+    var population_cap_bag: Array = [3, 3, 3, 4, 4, 5]
+    population_cap_bag.shuffle()
+    for idx in camp_controls_positions.get_child_count():
+        var pos: Node2D = camp_controls_positions.get_child(idx)
         var base_controls: Node2D
         base_controls = base_controls_scene.instance()
         base_controls.name = pos.name
         base_controls.global_position = pos.global_position
-        base_controls.init(Constants.LB_LABOR, 5)
+        base_controls.init(location_bonus_bag[idx], population_cap_bag[idx])
         base_info_layer.add_child(base_controls)
 
 func pulse_phase(delta: float):
