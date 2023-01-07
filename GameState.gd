@@ -22,12 +22,12 @@ func set_labor_available(new_value):
     emit_signal("game_state_workers_changed", Constants.LB_LABOR, new_value)
 
 func set_ai_available(new_value):
-    labor_available = new_value
+    ai_available = new_value
     emit_signal("game_state_changed")
     emit_signal("game_state_workers_changed", Constants.LB_AI, new_value)
 
 func set_admin_available(new_value):
-    labor_available = new_value
+    admin_available = new_value
     emit_signal("game_state_changed")
     emit_signal("game_state_workers_changed", Constants.LB_ADMIN, new_value)
 

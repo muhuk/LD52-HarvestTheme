@@ -24,6 +24,7 @@ var phase_phase_speed: float = 2.0
 func _ready():
     setup_game_state()
     create_bases()
+    randomize()
     call_deferred("on_phase_changed")
     call_deferred("on_strength_changed")
 

@@ -20,6 +20,17 @@ func _ready():
 #func _process(delta):
 #    pass
 
+func calculate_worker_chances() -> Array:
+    var result: Array
+    match base_location_bonus:
+        Constants.LB_LABOR:
+            result = [0.5, 0.25, 0.25]
+        Constants.LB_AI:
+            result = [0.25, 0.5, 0.25]
+        Constants.LB_ADMIN:
+            result = [0.25, 0.25, 0.5]
+    return result
+
 func enable_harvesting():
     if population > 1:
         harvest_button.disabled = false
@@ -33,24 +44,24 @@ func init(base_location_bonus_: int, population_cap: int):
     population_cap_base = population_cap
 
 func update():
-    match base_location_bonus:
-        Constants.LB_LABOR:
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/LaborChanceDisplay.value = 40
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AiChanceDisplay.value = 30
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AdminChanceDisplay.value = 30
-        Constants.LB_AI:
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/LaborChanceDisplay.value = 30
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AiChanceDisplay.value = 40
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AdminChanceDisplay.value = 30
-        Constants.LB_ADMIN:
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/LaborChanceDisplay.value = 30
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AiChanceDisplay.value = 30
-            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AdminChanceDisplay.value = 40
+    var worker_chances: Array = calculate_worker_chances()
+    $CenterContainer/PanelContainer/VBoxContainer/GridContainer/LaborChanceDisplay.value = worker_chances[0] * 100
+    $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AiChanceDisplay.value = worker_chances[1] * 100
+    $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AdminChanceDisplay.value = worker_chances[2] * 100
     population_display.text = "%d/%d" % [population, population_cap_base]
 
 func _on_HarvestButton_pressed():
     population -= 1
     if population <= 1:
         disable_harvesting()
-    emit_signal("harvested", Constants.LB_LABOR)
+    var worker_chances: Array = calculate_worker_chances()
+    var worker_type: int
+    var r = randf()
+    if r < worker_chances[0]:
+        worker_type = Constants.LB_LABOR
+    elif r < worker_chances[0] + worker_chances[1]:
+        worker_type = Constants.LB_AI
+    else:
+        worker_type = Constants.LB_ADMIN
+    emit_signal("harvested", worker_type)
     call_deferred("update")
