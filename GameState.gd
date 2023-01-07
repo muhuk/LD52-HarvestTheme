@@ -10,7 +10,7 @@ var labor_available: int = 0 setget set_labor_available
 var ai_available: int = 0 setget set_ai_available
 var admin_available: int = 0 setget set_admin_available
 
-var current_phase: int = Constants.PHASE_GATHER
+var current_phase: int = Constants.PHASE_GATHER setget set_current_phase
 
 var ships: int = 0
 
@@ -28,3 +28,8 @@ func set_admin_available(new_value):
     labor_available = new_value
     emit_signal("game_state_changed")
     emit_signal("game_state_workers_changed", Constants.LB_ADMIN, new_value)
+
+func set_current_phase(new_value):
+    current_phase = new_value
+    emit_signal("game_state_changed")
+    emit_signal("game_state_phase_changed")
