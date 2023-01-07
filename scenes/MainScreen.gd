@@ -2,6 +2,7 @@ extends Node2D
 
 onready var camp_marker_positions: Node2D = $Background/CampMarkerPositions
 onready var camp_controls_positions: Node2D = $Background/CampControlsPositions
+onready var world_map: Node2D = $Background/WorldMap
 
 onready var base_info_layer: CanvasLayer = $BaseInfo
 
@@ -25,12 +26,14 @@ func _ready():
 
 func create_bases():
     for pos in camp_marker_positions.get_children():
-        var base: Node2D
-        base = base_marker_scene.instance()
-        base.position = pos.position
-        $Background.add_child(base)
+        var base_marker: Node2D
+        base_marker = base_marker_scene.instance()
+        base_marker.name = pos.name
+        base_marker.position = pos.position
+        world_map.add_child(base_marker)
     for pos in camp_controls_positions.get_children():
         var base_controls: Node2D
         base_controls = base_controls_scene.instance()
+        base_controls.name = pos.name
         base_controls.position = pos.position
         base_info_layer.add_child(base_controls)
