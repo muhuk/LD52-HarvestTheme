@@ -38,48 +38,48 @@ margin_right = 124.0
 margin_bottom = 99.0
 columns = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+[node name="PopulationLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_right = 89.0
 margin_bottom = 12.0
 text = "POP"
 
-[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+[node name="PopulationDisplay" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_left = 93.0
 margin_right = 111.0
 margin_bottom = 12.0
 text = "1/8"
 
-[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+[node name="LaborChanceLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_top = 16.0
 margin_right = 89.0
 margin_bottom = 28.0
 text = "LABOR CHANCE"
 
-[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+[node name="LaborChanceDisplay" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_left = 93.0
 margin_top = 16.0
 margin_right = 111.0
 margin_bottom = 28.0
 
-[node name="Label4" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+[node name="AiChanceLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_top = 32.0
 margin_right = 89.0
 margin_bottom = 44.0
 text = "AI CHANCE"
 
-[node name="ProgressBar2" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+[node name="AiChanceDisplay" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_left = 93.0
 margin_top = 32.0
 margin_right = 111.0
 margin_bottom = 44.0
 
-[node name="Label5" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+[node name="AdminChanceLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_top = 48.0
 margin_right = 89.0
 margin_bottom = 60.0
 text = "ADMIN CHANCE"
 
-[node name="ProgressBar3" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+[node name="AdminChanceDisplay" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_left = 93.0
 margin_top = 48.0
 margin_right = 111.0

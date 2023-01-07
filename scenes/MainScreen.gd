@@ -6,6 +6,8 @@ onready var world_map: Node2D = $Background/WorldMap
 
 onready var base_info_layer: CanvasLayer = $BaseInfo
 
+onready var constants: Node = get_node("/root/Constants")
+
 var base_marker_scene: PackedScene = load("res://scenes/BaseMarker.tscn")
 var base_controls_scene: PackedScene = load("res://scenes/BaseControls.tscn")
 
@@ -36,4 +38,5 @@ func create_bases():
         base_controls = base_controls_scene.instance()
         base_controls.name = pos.name
         base_controls.global_position = pos.global_position
+        base_controls.init(constants.LB_LABOR, 5)
         base_info_layer.add_child(base_controls)
