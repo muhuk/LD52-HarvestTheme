@@ -14,106 +14,47 @@ self_modulate = Color( 0.498039, 0.498039, 0.498039, 1 )
 position = Vector2( 320, 180 )
 texture = ExtResource( 1 )
 
-[node name="NorthAmericaCampPos" type="Position2D" parent="Background/WorldMap"]
-position = Vector2( -128, -14 )
+[node name="CampMarkerPositions" type="Node2D" parent="Background"]
 
-[node name="SouthAmericaCampPos" type="Position2D" parent="Background/WorldMap"]
-position = Vector2( -84, 41 )
+[node name="NorthAmerica" type="Position2D" parent="Background/CampMarkerPositions"]
+position = Vector2( 192, 166 )
 
-[node name="EuropeCampPos" type="Position2D" parent="Background/WorldMap"]
-position = Vector2( 10, -26 )
+[node name="SouthAmerica" type="Position2D" parent="Background/CampMarkerPositions"]
+position = Vector2( 236, 221 )
 
-[node name="AfricaCampPos" type="Position2D" parent="Background/WorldMap"]
-position = Vector2( 5, 38 )
+[node name="Europe" type="Position2D" parent="Background/CampMarkerPositions"]
+position = Vector2( 352, 144 )
 
-[node name="AustraliaCampPos" type="Position2D" parent="Background/WorldMap"]
-position = Vector2( 136, 62 )
+[node name="Africa" type="Position2D" parent="Background/CampMarkerPositions"]
+position = Vector2( 312, 198 )
 
-[node name="AsiaCampPos" type="Position2D" parent="Background/WorldMap"]
-position = Vector2( 142, -63 )
+[node name="Australia" type="Position2D" parent="Background/CampMarkerPositions"]
+position = Vector2( 456, 242 )
 
-[node name="Base Info" type="CanvasLayer" parent="."]
+[node name="Asia" type="Position2D" parent="Background/CampMarkerPositions"]
+position = Vector2( 462, 117 )
 
-[node name="PanelContainer" type="PanelContainer" parent="Base Info"]
-margin_right = 14.0
-margin_bottom = 14.0
+[node name="CampControlsPositions" type="Node2D" parent="Background"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Base Info/PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 118.0
-margin_bottom = 99.0
+[node name="NorthAmerica" type="Position2D" parent="Background/CampControlsPositions"]
+position = Vector2( 115, 149 )
 
-[node name="Label" type="Label" parent="Base Info/PanelContainer/VBoxContainer"]
-margin_right = 111.0
-margin_bottom = 12.0
-text = "<BASE_NAME>"
+[node name="SouthAmerica" type="Position2D" parent="Background/CampControlsPositions"]
+position = Vector2( 162, 269 )
 
-[node name="GridContainer" type="GridContainer" parent="Base Info/PanelContainer/VBoxContainer"]
-margin_top = 16.0
-margin_right = 111.0
-margin_bottom = 92.0
-columns = 2
+[node name="Europe" type="Position2D" parent="Background/CampControlsPositions"]
+position = Vector2( 281, 119 )
 
-[node name="Label" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_right = 89.0
-margin_bottom = 12.0
-text = "POP"
+[node name="Africa" type="Position2D" parent="Background/CampControlsPositions"]
+position = Vector2( 372, 261 )
 
-[node name="Label2" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_right = 111.0
-margin_bottom = 12.0
-text = "1/8"
+[node name="Australia" type="Position2D" parent="Background/CampControlsPositions"]
+position = Vector2( 532, 267 )
 
-[node name="Label3" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 16.0
-margin_right = 89.0
-margin_bottom = 28.0
-text = "LABOR CHANCE"
+[node name="Asia" type="Position2D" parent="Background/CampControlsPositions"]
+position = Vector2( 537, 111 )
 
-[node name="ProgressBar" type="ProgressBar" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_top = 16.0
-margin_right = 111.0
-margin_bottom = 28.0
-
-[node name="Label4" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 32.0
-margin_right = 89.0
-margin_bottom = 44.0
-text = "AI CHANCE"
-
-[node name="ProgressBar2" type="ProgressBar" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_top = 32.0
-margin_right = 111.0
-margin_bottom = 44.0
-
-[node name="Label5" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 48.0
-margin_right = 89.0
-margin_bottom = 60.0
-text = "ADMIN CHANCE"
-
-[node name="ProgressBar3" type="ProgressBar" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_top = 48.0
-margin_right = 111.0
-margin_bottom = 60.0
-
-[node name="Label6" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 64.0
-margin_right = 89.0
-margin_bottom = 76.0
-text = "CONTENTMENT"
-
-[node name="Label7" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_top = 64.0
-margin_right = 111.0
-margin_bottom = 76.0
-text = ":)"
+[node name="BaseInfo" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 2

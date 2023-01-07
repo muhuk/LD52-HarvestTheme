@@ -1,0 +1,94 @@
+[gd_scene format=2]
+
+[node name="CampControls" type="Node2D"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.5
+margin_top = -53.0
+margin_right = 62.5
+margin_bottom = 53.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+margin_right = 125.0
+margin_bottom = 106.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 118.0
+margin_bottom = 99.0
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+margin_right = 111.0
+margin_bottom = 12.0
+text = "<BASE_NAME>"
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+margin_top = 16.0
+margin_right = 111.0
+margin_bottom = 92.0
+columns = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_right = 89.0
+margin_bottom = 12.0
+text = "POP"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_left = 93.0
+margin_right = 111.0
+margin_bottom = 12.0
+text = "1/8"
+
+[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_top = 16.0
+margin_right = 89.0
+margin_bottom = 28.0
+text = "LABOR CHANCE"
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_left = 93.0
+margin_top = 16.0
+margin_right = 111.0
+margin_bottom = 28.0
+
+[node name="Label4" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_top = 32.0
+margin_right = 89.0
+margin_bottom = 44.0
+text = "AI CHANCE"
+
+[node name="ProgressBar2" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_left = 93.0
+margin_top = 32.0
+margin_right = 111.0
+margin_bottom = 44.0
+
+[node name="Label5" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_top = 48.0
+margin_right = 89.0
+margin_bottom = 60.0
+text = "ADMIN CHANCE"
+
+[node name="ProgressBar3" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_left = 93.0
+margin_top = 48.0
+margin_right = 111.0
+margin_bottom = 60.0
+
+[node name="Label6" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_top = 64.0
+margin_right = 89.0
+margin_bottom = 76.0
+text = "CONTENTMENT"
+
+[node name="Label7" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
+margin_left = 93.0
+margin_top = 64.0
+margin_right = 111.0
+margin_bottom = 76.0
+text = ":)"

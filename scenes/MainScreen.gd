@@ -1,8 +1,12 @@
 extends Node2D
 
-onready var world_map: Node2D = $Background/WorldMap
+onready var camp_marker_positions: Node2D = $Background/CampMarkerPositions
+onready var camp_controls_positions: Node2D = $Background/CampControlsPositions
+
+onready var base_info_layer: CanvasLayer = $BaseInfo
 
 var base_marker_scene: PackedScene = load("res://scenes/BaseMarker.tscn")
+var base_controls_scene: PackedScene = load("res://scenes/CampControls.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -20,10 +24,13 @@ func _ready():
 
 
 func create_bases():
-    for pos in world_map.get_children():
+    for pos in camp_marker_positions.get_children():
         var base: Node2D
         base = base_marker_scene.instance()
-        print(pos.position)
-        print(base.position)
         base.position = pos.position
-        world_map.add_child(base)
+        $Background.add_child(base)
+    for pos in camp_controls_positions.get_children():
+        var base_controls: Node2D
+        base_controls = base_controls_scene.instance()
+        base_controls.position = pos.position
+        base_info_layer.add_child(base_controls)
