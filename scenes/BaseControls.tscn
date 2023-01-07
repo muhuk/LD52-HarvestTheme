@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/BaseControls.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/Pixellari_18.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/Pixellari_12.tres" type="DynamicFont" id=2]
 
 [node name="CampControls" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,97 +11,108 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -62.5
-margin_top = -53.0
-margin_right = 62.5
-margin_bottom = 53.0
+margin_left = -69.0
+margin_top = -67.5
+margin_right = 69.0
+margin_bottom = 67.5
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-margin_right = 138.0
-margin_bottom = 135.0
+margin_left = 10.0
+margin_top = 12.0
+margin_right = 128.0
+margin_bottom = 122.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 131.0
-margin_bottom = 128.0
+margin_right = 111.0
+margin_bottom = 103.0
 
 [node name="BaseName" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_right = 124.0
-margin_bottom = 19.0
+margin_right = 104.0
+margin_bottom = 12.0
 custom_fonts/font = ExtResource( 2 )
 text = "<BASE_NAME>"
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 23.0
-margin_right = 124.0
-margin_bottom = 99.0
+margin_top = 16.0
+margin_right = 104.0
+margin_bottom = 78.0
 columns = 2
 
 [node name="PopulationLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_right = 89.0
-margin_bottom = 12.0
+margin_right = 60.0
+margin_bottom = 8.0
 text = "POP"
 
 [node name="PopulationDisplay" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_right = 111.0
-margin_bottom = 12.0
+margin_left = 64.0
+margin_right = 104.0
+margin_bottom = 8.0
 text = "1/8"
 
 [node name="LaborChanceLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 16.0
-margin_right = 89.0
-margin_bottom = 28.0
+margin_top = 13.0
+margin_right = 60.0
+margin_bottom = 21.0
 text = "LABOR CHANCE"
 
 [node name="LaborChanceDisplay" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_top = 16.0
-margin_right = 111.0
-margin_bottom = 28.0
+margin_left = 64.0
+margin_top = 12.0
+margin_right = 104.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 40, 10 )
+step = 1.0
+percent_visible = false
 
 [node name="AiChanceLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 32.0
-margin_right = 89.0
-margin_bottom = 44.0
+margin_top = 27.0
+margin_right = 60.0
+margin_bottom = 35.0
 text = "AI CHANCE"
 
 [node name="AiChanceDisplay" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_top = 32.0
-margin_right = 111.0
-margin_bottom = 44.0
+margin_left = 64.0
+margin_top = 26.0
+margin_right = 104.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 40, 10 )
+step = 1.0
+percent_visible = false
 
 [node name="AdminChanceLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 48.0
-margin_right = 89.0
-margin_bottom = 60.0
+margin_top = 41.0
+margin_right = 60.0
+margin_bottom = 49.0
 text = "ADMIN CHANCE"
 
 [node name="AdminChanceDisplay" type="ProgressBar" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_top = 48.0
-margin_right = 111.0
-margin_bottom = 60.0
+margin_left = 64.0
+margin_top = 40.0
+margin_right = 104.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 40, 10 )
+step = 1.0
+percent_visible = false
 
 [node name="Label6" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 64.0
-margin_right = 89.0
-margin_bottom = 76.0
+margin_top = 54.0
+margin_right = 60.0
+margin_bottom = 62.0
 text = "CONTENTMENT"
 
 [node name="Label7" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 93.0
-margin_top = 64.0
-margin_right = 111.0
-margin_bottom = 76.0
+margin_left = 64.0
+margin_top = 54.0
+margin_right = 104.0
+margin_bottom = 62.0
 text = ":)"
 
 [node name="HarvestButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
-margin_top = 103.0
-margin_right = 124.0
-margin_bottom = 121.0
+margin_top = 82.0
+margin_right = 104.0
+margin_bottom = 96.0
 text = "HARVEST"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HarvestButton" to="." method="_on_HarvestButton_pressed"]

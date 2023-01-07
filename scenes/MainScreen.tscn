@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/images/world_map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/MainScreen.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Pixellari_12.tres" type="DynamicFont" id=3]
 
 [node name="MainScreen" type="Node2D"]
 script = ExtResource( 2 )
@@ -66,135 +67,141 @@ position = Vector2( 219, -70 )
 layer = 2
 
 [node name="HudContainer" type="Control" parent="HUD"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -320.0
+margin_right = 320.0
+margin_bottom = 360.0
 rect_min_size = Vector2( 640, 360 )
 
 [node name="PhasePanel" type="MarginContainer" parent="HUD/HudContainer"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -34.0
-margin_right = 34.0
-margin_bottom = 64.0
+margin_left = -33.5
+margin_right = 33.5
+margin_bottom = 58.0
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/PhasePanel"]
-margin_right = 68.0
-margin_bottom = 64.0
+margin_right = 67.0
+margin_bottom = 58.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/HudContainer/PhasePanel/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 61.0
-margin_bottom = 57.0
+margin_right = 60.0
+margin_bottom = 51.0
 
 [node name="PhaseGather" type="Label" parent="HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer"]
-margin_right = 54.0
+margin_right = 53.0
 margin_bottom = 12.0
+custom_fonts/font = ExtResource( 3 )
 text = "GATHER"
 
 [node name="PhaseExecute" type="Label" parent="HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer"]
 margin_top = 16.0
-margin_right = 54.0
+margin_right = 53.0
 margin_bottom = 28.0
+custom_fonts/font = ExtResource( 3 )
 text = "EXECUTE"
 
 [node name="PhaseDefend" type="Label" parent="HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer"]
 margin_top = 32.0
-margin_right = 54.0
+margin_right = 53.0
 margin_bottom = 44.0
+custom_fonts/font = ExtResource( 3 )
 text = "DEFEND"
 
 [node name="WorkersPanel" type="MarginContainer" parent="HUD/HudContainer"]
-margin_right = 98.0
-margin_bottom = 79.0
+margin_right = 57.0
+margin_bottom = 46.0
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/WorkersPanel"]
-margin_right = 98.0
-margin_bottom = 79.0
+margin_right = 64.0
+margin_bottom = 55.0
 
 [node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/WorkersPanel/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 91.0
-margin_bottom = 72.0
+margin_right = 57.0
+margin_bottom = 48.0
 columns = 2
 
 [node name="LaborLabel" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
-margin_right = 48.0
-margin_bottom = 12.0
+margin_right = 40.0
+margin_bottom = 11.0
 text = "LABOR"
 
 [node name="LaborDisplay" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
-margin_left = 52.0
-margin_right = 59.0
-margin_bottom = 12.0
+margin_left = 44.0
+margin_right = 50.0
+margin_bottom = 11.0
 text = "0"
 
 [node name="AiLabel" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
-margin_top = 16.0
-margin_right = 48.0
-margin_bottom = 28.0
+margin_top = 15.0
+margin_right = 40.0
+margin_bottom = 26.0
 text = "AI NODE"
 
 [node name="AiDisplay" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
-margin_left = 52.0
-margin_top = 16.0
-margin_right = 59.0
-margin_bottom = 28.0
+margin_left = 44.0
+margin_top = 15.0
+margin_right = 50.0
+margin_bottom = 26.0
 text = "0"
 
 [node name="AdminLabel" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
-margin_top = 32.0
-margin_right = 48.0
-margin_bottom = 44.0
+margin_top = 30.0
+margin_right = 40.0
+margin_bottom = 41.0
 text = "ADMIN"
 
 [node name="AdminDisplay" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
-margin_left = 52.0
-margin_top = 32.0
-margin_right = 59.0
-margin_bottom = 44.0
+margin_left = 44.0
+margin_top = 30.0
+margin_right = 50.0
+margin_bottom = 41.0
 text = "0"
 
 [node name="StrengthPanel" type="MarginContainer" parent="HUD/HudContainer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -120.0
-margin_bottom = 46.0
+margin_left = -102.0
+margin_bottom = 40.0
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/StrengthPanel"]
-margin_right = 120.0
-margin_bottom = 46.0
+margin_right = 102.0
+margin_bottom = 40.0
 
 [node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/StrengthPanel/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 113.0
-margin_bottom = 39.0
+margin_right = 95.0
+margin_bottom = 33.0
 columns = 2
 
 [node name="ShipsLabel" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
-margin_right = 70.0
-margin_bottom = 12.0
+margin_right = 57.0
+margin_bottom = 11.0
 text = "SHIPS"
 
 [node name="ShipsDisplay" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
-margin_left = 74.0
-margin_right = 106.0
-margin_bottom = 12.0
+margin_left = 61.0
+margin_right = 88.0
+margin_bottom = 11.0
 text = "0"
 
 [node name="EfficiencyLabel" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
-margin_top = 16.0
-margin_right = 70.0
-margin_bottom = 28.0
+margin_top = 15.0
+margin_right = 57.0
+margin_bottom = 26.0
 text = "EFFICIENCY"
 
 [node name="EfficiencyDisplay" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
-margin_left = 74.0
-margin_top = 16.0
-margin_right = 106.0
-margin_bottom = 28.0
+margin_left = 61.0
+margin_top = 15.0
+margin_right = 88.0
+margin_bottom = 26.0
 text = "100%"
 
 [node name="BaseInfo" type="Control" parent="HUD"]

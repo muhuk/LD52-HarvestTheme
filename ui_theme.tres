@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=2]
 
-[ext_resource path="res://assets/fonts/Pixellari_12.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/Pixellari_10.tres" type="DynamicFont" id=1]
 
 [resource]
 Button/fonts/font = ExtResource( 1 )

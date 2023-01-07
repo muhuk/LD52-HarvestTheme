@@ -32,6 +32,19 @@ func init(base_location_bonus_: int, population_cap: int):
     population_cap_base = population_cap
 
 func update():
+    match base_location_bonus:
+        Constants.LB_LABOR:
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/LaborChanceDisplay.value = 40
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AiChanceDisplay.value = 30
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AdminChanceDisplay.value = 30
+        Constants.LB_AI:
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/LaborChanceDisplay.value = 30
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AiChanceDisplay.value = 40
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AdminChanceDisplay.value = 30
+        Constants.LB_ADMIN:
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/LaborChanceDisplay.value = 30
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AiChanceDisplay.value = 30
+            $CenterContainer/PanelContainer/VBoxContainer/GridContainer/AdminChanceDisplay.value = 40
     population_display.text = "%d/%d" % [population, population_cap_base]
 
 func _on_HarvestButton_pressed():
