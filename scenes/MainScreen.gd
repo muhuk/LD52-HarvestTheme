@@ -35,5 +35,5 @@ func create_bases():
         var base_controls: Node2D
         base_controls = base_controls_scene.instance()
         base_controls.name = pos.name
-        base_controls.position = pos.position
+        base_controls.global_position = pos.global_position
         base_info_layer.add_child(base_controls)

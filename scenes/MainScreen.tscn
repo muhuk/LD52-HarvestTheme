@@ -15,44 +15,46 @@ position = Vector2( 320, 180 )
 texture = ExtResource( 1 )
 
 [node name="CampMarkerPositions" type="Node2D" parent="Background"]
+position = Vector2( 320, 180 )
 
 [node name="NorthAmerica" type="Position2D" parent="Background/CampMarkerPositions"]
-position = Vector2( 192, 166 )
+position = Vector2( -124, -16 )
 
 [node name="SouthAmerica" type="Position2D" parent="Background/CampMarkerPositions"]
-position = Vector2( 236, 221 )
+position = Vector2( -80, 39 )
 
 [node name="Europe" type="Position2D" parent="Background/CampMarkerPositions"]
-position = Vector2( 352, 144 )
+position = Vector2( 36, -38 )
 
 [node name="Africa" type="Position2D" parent="Background/CampMarkerPositions"]
-position = Vector2( 312, 198 )
+position = Vector2( -4, 16 )
 
 [node name="Australia" type="Position2D" parent="Background/CampMarkerPositions"]
-position = Vector2( 456, 242 )
+position = Vector2( 140, 60 )
 
 [node name="Asia" type="Position2D" parent="Background/CampMarkerPositions"]
-position = Vector2( 462, 117 )
+position = Vector2( 146, -65 )
 
 [node name="CampControlsPositions" type="Node2D" parent="Background"]
+position = Vector2( 320, 180 )
 
 [node name="NorthAmerica" type="Position2D" parent="Background/CampControlsPositions"]
-position = Vector2( 115, 149 )
+position = Vector2( -203, -32 )
 
 [node name="SouthAmerica" type="Position2D" parent="Background/CampControlsPositions"]
-position = Vector2( 162, 269 )
+position = Vector2( -156, 88 )
 
 [node name="Europe" type="Position2D" parent="Background/CampControlsPositions"]
-position = Vector2( 281, 119 )
+position = Vector2( -37, -62 )
 
 [node name="Africa" type="Position2D" parent="Background/CampControlsPositions"]
-position = Vector2( 372, 261 )
+position = Vector2( 54, 80 )
 
 [node name="Australia" type="Position2D" parent="Background/CampControlsPositions"]
-position = Vector2( 532, 267 )
+position = Vector2( 214, 86 )
 
 [node name="Asia" type="Position2D" parent="Background/CampControlsPositions"]
-position = Vector2( 537, 111 )
+position = Vector2( 219, -70 )
 
 [node name="BaseInfo" type="CanvasLayer" parent="."]
 
@@ -102,18 +104,18 @@ margin_bottom = 44.0
 text = "DEFEND"
 
 [node name="MarginContainer2" type="MarginContainer" parent="HUD/HudContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 98.0
+margin_bottom = 79.0
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/MarginContainer2"]
-margin_right = 73.0
-margin_bottom = 58.0
+margin_right = 98.0
+margin_bottom = 79.0
 
 [node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/MarginContainer2/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 66.0
-margin_bottom = 51.0
+margin_right = 91.0
+margin_bottom = 72.0
 columns = 2
 
 [node name="Label" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
