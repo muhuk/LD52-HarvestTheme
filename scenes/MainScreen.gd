@@ -7,7 +7,7 @@ onready var world_map: Node2D = $Background/WorldMap
 onready var base_info_layer: CanvasLayer = $BaseInfo
 
 var base_marker_scene: PackedScene = load("res://scenes/BaseMarker.tscn")
-var base_controls_scene: PackedScene = load("res://scenes/CampControls.tscn")
+var base_controls_scene: PackedScene = load("res://scenes/BaseControls.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
