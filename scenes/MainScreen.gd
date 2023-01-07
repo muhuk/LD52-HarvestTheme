@@ -6,10 +6,10 @@ onready var world_map: Node2D = $Background/WorldMap
 
 onready var base_info_layer: CanvasLayer = $BaseInfo
 
-onready var constants: Node = get_node("/root/Constants")
-
 var base_marker_scene: PackedScene = load("res://scenes/BaseMarker.tscn")
 var base_controls_scene: PackedScene = load("res://scenes/BaseControls.tscn")
+
+var game_state: GameState
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,7 +18,8 @@ var base_controls_scene: PackedScene = load("res://scenes/BaseControls.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    self.create_bases()
+    setup_game_state()
+    create_bases()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,5 +39,20 @@ func create_bases():
         base_controls = base_controls_scene.instance()
         base_controls.name = pos.name
         base_controls.global_position = pos.global_position
-        base_controls.init(constants.LB_LABOR, 5)
+        base_controls.init(Constants.LB_LABOR, 5)
         base_info_layer.add_child(base_controls)
+
+func setup_game_state():
+    game_state = GameState.new()
+    game_state.name = "GameState"
+    add_child(game_state)
+    game_state.connect("game_state_workers_changed", self, "on_workers_changed")
+
+func on_workers_changed(worker_type: int, new_value: int):
+    match worker_type:
+        Constants.LB_LABOR:
+            $HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer/LaborDisplay.text = str(new_value)
+        Constants.LB_AI:
+            $HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer/AiDisplay.text = str(new_value)
+        Constants.LB_ADMIN:
+            $HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer/AdminDisplay.text = str(new_value)

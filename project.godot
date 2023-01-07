@@ -8,15 +8,27 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Object",
+"class": "Constants",
+"language": "GDScript",
+"path": "res://Constants.gd"
+}, {
+"base": "Node",
+"class": "GameState",
+"language": "GDScript",
+"path": "res://GameState.gd"
+} ]
+_global_script_class_icons={
+"Constants": "",
+"GameState": ""
+}
+
 [application]
 
 config/name="LD52 Harvest Theme"
 run/main_scene="res://scenes/MainScreen.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-Constants="*res://Constants.gd"
 
 [display]
 

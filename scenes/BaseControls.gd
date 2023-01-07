@@ -16,5 +16,5 @@ func _ready():
 #    pass
 
 func init(base_location_bonus:int, population_cap: int):
-    self.base_location_bonus = base_location_bonus
-    self.population_cap = population_cap
+    base_location_bonus = base_location_bonus
+    population_cap = population_cap

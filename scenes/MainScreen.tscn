@@ -66,130 +66,130 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 640, 360 )
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD/HudContainer"]
+[node name="PhasePanel" type="MarginContainer" parent="HUD/HudContainer"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -34.0
 margin_right = 34.0
 margin_bottom = 64.0
 
-[node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/PhasePanel"]
 margin_right = 68.0
 margin_bottom = 64.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/HudContainer/MarginContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/HudContainer/PhasePanel/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 61.0
 margin_bottom = 57.0
 
-[node name="Label" type="Label" parent="HUD/HudContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer"]
 modulate = Color( 0.211765, 0.447059, 0.0588235, 1 )
 margin_right = 54.0
 margin_bottom = 12.0
 text = "GATHER"
 
-[node name="Label2" type="Label" parent="HUD/HudContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer"]
 self_modulate = Color( 0.952941, 0.929412, 0.164706, 1 )
 margin_top = 16.0
 margin_right = 54.0
 margin_bottom = 28.0
 text = "EXECUTE"
 
-[node name="Label3" type="Label" parent="HUD/HudContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer"]
 modulate = Color( 0.317647, 0.054902, 0.054902, 1 )
 margin_top = 32.0
 margin_right = 54.0
 margin_bottom = 44.0
 text = "DEFEND"
 
-[node name="MarginContainer2" type="MarginContainer" parent="HUD/HudContainer"]
+[node name="WorkersPanel" type="MarginContainer" parent="HUD/HudContainer"]
 margin_right = 98.0
 margin_bottom = 79.0
 
-[node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/MarginContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/WorkersPanel"]
 margin_right = 98.0
 margin_bottom = 79.0
 
-[node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/MarginContainer2/PanelContainer"]
+[node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/WorkersPanel/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 91.0
 margin_bottom = 72.0
 columns = 2
 
-[node name="Label" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
+[node name="LaborLabel" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
 margin_right = 48.0
 margin_bottom = 12.0
 text = "LABOR"
 
-[node name="Label2" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
+[node name="LaborDisplay" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
 margin_left = 52.0
 margin_right = 59.0
 margin_bottom = 12.0
 text = "0"
 
-[node name="Label3" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
+[node name="AiLabel" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
 margin_top = 16.0
 margin_right = 48.0
 margin_bottom = 28.0
 text = "AI NODE"
 
-[node name="Label4" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
+[node name="AiDisplay" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
 margin_left = 52.0
 margin_top = 16.0
 margin_right = 59.0
 margin_bottom = 28.0
 text = "0"
 
-[node name="Label5" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
+[node name="AdminLabel" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
 margin_top = 32.0
 margin_right = 48.0
 margin_bottom = 44.0
 text = "ADMIN"
 
-[node name="Label6" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
+[node name="AdminDisplay" type="Label" parent="HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer"]
 margin_left = 52.0
 margin_top = 32.0
 margin_right = 59.0
 margin_bottom = 44.0
 text = "0"
 
-[node name="MarginContainer3" type="MarginContainer" parent="HUD/HudContainer"]
+[node name="StrengthPanel" type="MarginContainer" parent="HUD/HudContainer"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -97.0
 margin_bottom = 46.0
 
-[node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/MarginContainer3"]
+[node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/StrengthPanel"]
 margin_right = 97.0
 margin_bottom = 46.0
 
-[node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/MarginContainer3/PanelContainer"]
+[node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/StrengthPanel/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 90.0
 margin_bottom = 39.0
 columns = 2
 
-[node name="Label" type="Label" parent="HUD/HudContainer/MarginContainer3/PanelContainer/GridContainer"]
+[node name="Label" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
 margin_right = 70.0
 margin_bottom = 12.0
 text = "SHIPS"
 
-[node name="Label2" type="Label" parent="HUD/HudContainer/MarginContainer3/PanelContainer/GridContainer"]
+[node name="Label2" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
 margin_left = 74.0
 margin_right = 81.0
 margin_bottom = 12.0
 text = "0"
 
-[node name="Label3" type="Label" parent="HUD/HudContainer/MarginContainer3/PanelContainer/GridContainer"]
+[node name="Label3" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
 margin_top = 16.0
 margin_right = 70.0
 margin_bottom = 28.0
 text = "EFFICIENCY"
 
-[node name="Label4" type="Label" parent="HUD/HudContainer/MarginContainer3/PanelContainer/GridContainer"]
+[node name="Label4" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
 margin_left = 74.0
 margin_top = 16.0
 margin_right = 81.0
