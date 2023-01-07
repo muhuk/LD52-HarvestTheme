@@ -63,83 +63,82 @@ margin_bottom = 14.0
 [node name="VBoxContainer" type="VBoxContainer" parent="Base Info/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 134.0
-margin_bottom = 111.0
+margin_right = 118.0
+margin_bottom = 105.0
 
 [node name="Label" type="Label" parent="Base Info/PanelContainer/VBoxContainer"]
-margin_right = 127.0
-margin_bottom = 14.0
+margin_right = 111.0
+margin_bottom = 12.0
 text = "<BASE_NAME>"
 
 [node name="GridContainer" type="GridContainer" parent="Base Info/PanelContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 127.0
-margin_bottom = 104.0
+margin_top = 16.0
+margin_right = 111.0
+margin_bottom = 98.0
 columns = 2
 
 [node name="Label" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_right = 102.0
-margin_bottom = 14.0
+margin_right = 89.0
+margin_bottom = 12.0
 text = "POP"
 
 [node name="Label2" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 106.0
-margin_right = 127.0
-margin_bottom = 14.0
+margin_left = 93.0
+margin_right = 111.0
+margin_bottom = 12.0
 text = "1/8"
 
 [node name="Label3" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 18.0
-margin_right = 102.0
-margin_bottom = 32.0
+margin_top = 17.0
+margin_right = 89.0
+margin_bottom = 29.0
 text = "LABOR CHANCE"
 
 [node name="ProgressBar" type="ProgressBar" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 106.0
-margin_top = 18.0
-margin_right = 127.0
-margin_bottom = 32.0
+margin_left = 93.0
+margin_top = 16.0
+margin_right = 111.0
+margin_bottom = 30.0
 
 [node name="Label4" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 36.0
-margin_right = 102.0
-margin_bottom = 50.0
+margin_top = 35.0
+margin_right = 89.0
+margin_bottom = 47.0
 text = "AI CHANCE"
 
 [node name="ProgressBar2" type="ProgressBar" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 106.0
-margin_top = 36.0
-margin_right = 127.0
-margin_bottom = 50.0
+margin_left = 93.0
+margin_top = 34.0
+margin_right = 111.0
+margin_bottom = 48.0
 
 [node name="Label5" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 54.0
-margin_right = 102.0
-margin_bottom = 68.0
+margin_top = 53.0
+margin_right = 89.0
+margin_bottom = 65.0
 text = "ADMIN CHANCE"
 
 [node name="ProgressBar3" type="ProgressBar" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 106.0
-margin_top = 54.0
-margin_right = 127.0
-margin_bottom = 68.0
+margin_left = 93.0
+margin_top = 52.0
+margin_right = 111.0
+margin_bottom = 66.0
 
 [node name="Label6" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_top = 72.0
-margin_right = 102.0
-margin_bottom = 86.0
+margin_top = 70.0
+margin_right = 89.0
+margin_bottom = 82.0
 text = "CONTENTMENT"
 
 [node name="Label7" type="Label" parent="Base Info/PanelContainer/VBoxContainer/GridContainer"]
-margin_left = 106.0
-margin_top = 72.0
-margin_right = 127.0
-margin_bottom = 86.0
+margin_left = 93.0
+margin_top = 70.0
+margin_right = 111.0
+margin_bottom = 82.0
 text = ":)"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="HudContainer" type="Control" parent="HUD"]
 anchor_right = 1.0
@@ -166,21 +165,21 @@ margin_bottom = 57.0
 [node name="Label" type="Label" parent="HUD/HudContainer/MarginContainer/PanelContainer/VBoxContainer"]
 modulate = Color( 0.211765, 0.447059, 0.0588235, 1 )
 margin_right = 54.0
-margin_bottom = 14.0
+margin_bottom = 12.0
 text = "GATHER"
 
 [node name="Label2" type="Label" parent="HUD/HudContainer/MarginContainer/PanelContainer/VBoxContainer"]
 self_modulate = Color( 0.952941, 0.929412, 0.164706, 1 )
-margin_top = 18.0
+margin_top = 16.0
 margin_right = 54.0
-margin_bottom = 32.0
+margin_bottom = 28.0
 text = "EXECUTE"
 
 [node name="Label3" type="Label" parent="HUD/HudContainer/MarginContainer/PanelContainer/VBoxContainer"]
 modulate = Color( 0.317647, 0.054902, 0.054902, 1 )
-margin_top = 36.0
+margin_top = 32.0
 margin_right = 54.0
-margin_bottom = 50.0
+margin_bottom = 44.0
 text = "DEFEND"
 
 [node name="MarginContainer2" type="MarginContainer" parent="HUD/HudContainer"]
@@ -188,51 +187,51 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/MarginContainer2"]
-margin_right = 82.0
-margin_bottom = 64.0
+margin_right = 73.0
+margin_bottom = 58.0
 
 [node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/MarginContainer2/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 75.0
-margin_bottom = 57.0
+margin_right = 66.0
+margin_bottom = 51.0
 columns = 2
 
 [node name="Label" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
-margin_right = 56.0
-margin_bottom = 14.0
+margin_right = 48.0
+margin_bottom = 12.0
 text = "LABOR"
 
 [node name="Label2" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
-margin_left = 60.0
-margin_right = 68.0
-margin_bottom = 14.0
+margin_left = 52.0
+margin_right = 59.0
+margin_bottom = 12.0
 text = "0"
 
 [node name="Label3" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
-margin_top = 18.0
-margin_right = 56.0
-margin_bottom = 32.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 28.0
 text = "AI NODE"
 
 [node name="Label4" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
-margin_left = 60.0
-margin_top = 18.0
-margin_right = 68.0
-margin_bottom = 32.0
+margin_left = 52.0
+margin_top = 16.0
+margin_right = 59.0
+margin_bottom = 28.0
 text = "0"
 
 [node name="Label5" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
-margin_top = 36.0
-margin_right = 56.0
-margin_bottom = 50.0
+margin_top = 32.0
+margin_right = 48.0
+margin_bottom = 44.0
 text = "ADMIN"
 
 [node name="Label6" type="Label" parent="HUD/HudContainer/MarginContainer2/PanelContainer/GridContainer"]
-margin_left = 60.0
-margin_top = 36.0
-margin_right = 68.0
-margin_bottom = 50.0
+margin_left = 52.0
+margin_top = 32.0
+margin_right = 59.0
+margin_bottom = 44.0
 text = "0"
 
 [node name="MarginContainer3" type="MarginContainer" parent="HUD/HudContainer"]
@@ -253,25 +252,25 @@ margin_bottom = 39.0
 columns = 2
 
 [node name="Label" type="Label" parent="HUD/HudContainer/MarginContainer3/PanelContainer/GridContainer"]
-margin_right = 71.0
-margin_bottom = 14.0
+margin_right = 70.0
+margin_bottom = 12.0
 text = "SHIPS"
 
 [node name="Label2" type="Label" parent="HUD/HudContainer/MarginContainer3/PanelContainer/GridContainer"]
-margin_left = 75.0
-margin_right = 83.0
-margin_bottom = 14.0
+margin_left = 74.0
+margin_right = 81.0
+margin_bottom = 12.0
 text = "0"
 
 [node name="Label3" type="Label" parent="HUD/HudContainer/MarginContainer3/PanelContainer/GridContainer"]
-margin_top = 18.0
-margin_right = 71.0
-margin_bottom = 32.0
+margin_top = 16.0
+margin_right = 70.0
+margin_bottom = 28.0
 text = "EFFICIENCY"
 
 [node name="Label4" type="Label" parent="HUD/HudContainer/MarginContainer3/PanelContainer/GridContainer"]
-margin_left = 75.0
-margin_top = 18.0
-margin_right = 83.0
-margin_bottom = 32.0
+margin_left = 74.0
+margin_top = 16.0
+margin_right = 81.0
+margin_bottom = 28.0
 text = "0"
