@@ -3,5 +3,6 @@
 [ext_resource path="res://assets/fonts/Pixellari_12.tres" type="DynamicFont" id=1]
 
 [resource]
+Button/fonts/font = ExtResource( 1 )
 Label/fonts/font = ExtResource( 1 )
 ProgressBar/fonts/font = ExtResource( 1 )

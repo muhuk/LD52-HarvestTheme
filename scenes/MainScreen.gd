@@ -4,7 +4,7 @@ onready var camp_marker_positions: Node2D = $Background/CampMarkerPositions
 onready var camp_controls_positions: Node2D = $Background/CampControlsPositions
 onready var world_map: Node2D = $Background/WorldMap
 
-onready var base_info_layer: CanvasLayer = $BaseInfo
+onready var base_info_container: Control = $HUD/BaseInfo
 
 # gather, execute, defend
 export var gather_color_inactive: Color
@@ -55,7 +55,8 @@ func create_bases():
         base_controls.name = pos.name
         base_controls.global_position = pos.global_position
         base_controls.init(location_bonus_bag[idx], population_cap_bag[idx])
-        base_info_layer.add_child(base_controls)
+        base_controls.connect("harvested", self, "on_harvest")
+        base_info_container.add_child(base_controls)
 
 func pulse_phase(delta: float):
     phase_phase += delta * phase_phase_speed
@@ -82,17 +83,32 @@ func setup_game_state():
     game_state.connect("game_state_phase_changed", self, "on_phase_changed")
     game_state.connect("game_state_workers_changed", self, "on_workers_changed")
 
+func on_harvest(worker_type: int):
+    match worker_type:
+        Constants.LB_LABOR:
+            game_state.labor_available += 1
+        Constants.LB_AI:
+            game_state.ai_available += 1
+        Constants.LB_ADMIN:
+            game_state.admin_available += 1
+
 func on_phase_changed():
     match game_state.current_phase:
         Constants.PHASE_GATHER:
+            for base in base_info_container.get_children():
+                base.enable_harvesting()
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseGather.self_modulate = gather_color_active
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseExecute.self_modulate = execute_color_inactive
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseDefend.self_modulate = defend_color_inactive
         Constants.PHASE_EXECUTE:
+            for base in base_info_container.get_children():
+                base.disable_harvesting()
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseGather.self_modulate = gather_color_inactive
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseExecute.self_modulate = execute_color_active
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseDefend.self_modulate = defend_color_inactive
         Constants.PHASE_DEFEND:
+            for base in base_info_container.get_children():
+                base.disable_harvesting()
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseGather.self_modulate = gather_color_inactive
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseExecute.self_modulate = execute_color_inactive
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseDefend.self_modulate = defend_color_active
