@@ -5,16 +5,20 @@ onready var population_display: Label = $CenterContainer/PanelContainer/VBoxCont
 
 var base_location_bonus: int
 var population: int = 1
-var population_cap: int
+var population_cap_base: int
 
 func _ready():
     base_name.text = self.name
-    population_display.text = str(self.population) + "/" + str(self.population_cap)
+    call_deferred("update")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #    pass
 
-func init(base_location_bonus:int, population_cap: int):
-    base_location_bonus = base_location_bonus
-    population_cap = population_cap
+
+func init(base_location_bonus_: int, population_cap: int):
+    base_location_bonus = base_location_bonus_
+    population_cap_base = population_cap
+
+func update():
+    population_display.text = "%d/%d" % [population, population_cap_base]

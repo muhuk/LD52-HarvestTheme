@@ -24,8 +24,8 @@ var phase_phase_speed: float = 2.0
 func _ready():
     setup_game_state()
     create_bases()
-    on_phase_changed()
-    on_strength_changed()
+    call_deferred("on_phase_changed")
+    call_deferred("on_strength_changed")
 
 func _process(delta):
     pulse_phase(delta)
