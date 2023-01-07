@@ -8,7 +8,7 @@ onready var population_display: Label = $CenterContainer/PanelContainer/VBoxCont
 onready var harvest_button: Button = $CenterContainer/PanelContainer/VBoxContainer/HarvestButton
 
 var base_location_bonus: int
-var population: int = 1
+var population: int
 var population_cap_base: int
 
 func _ready():
@@ -29,6 +29,7 @@ func disable_harvesting():
 
 func init(base_location_bonus_: int, population_cap: int):
     base_location_bonus = base_location_bonus_
+    population = population_cap
     population_cap_base = population_cap
 
 func update():

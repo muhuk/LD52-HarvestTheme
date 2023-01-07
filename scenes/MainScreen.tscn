@@ -204,6 +204,21 @@ margin_right = 88.0
 margin_bottom = 26.0
 text = "100%"
 
+[node name="MarginContainer" type="MarginContainer" parent="HUD/HudContainer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -30.5
+margin_top = -25.0
+margin_right = 30.5
+margin_bottom = -8.0
+
+[node name="Button" type="Button" parent="HUD/HudContainer/MarginContainer"]
+margin_right = 61.0
+margin_bottom = 17.0
+text = "END TURN"
+
 [node name="BaseInfo" type="Control" parent="HUD"]
 margin_right = 40.0
 margin_bottom = 40.0
