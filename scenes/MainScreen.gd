@@ -25,6 +25,7 @@ func _ready():
     setup_game_state()
     create_bases()
     on_phase_changed()
+    on_strength_changed()
 
 func _process(delta):
     pulse_phase(delta)
@@ -65,8 +66,9 @@ func setup_game_state():
     game_state = GameState.new()
     game_state.name = "GameState"
     add_child(game_state)
-    game_state.connect("game_state_workers_changed", self, "on_workers_changed")
+    game_state.connect("game_state_strength_changed", self, "on_strength_changed")
     game_state.connect("game_state_phase_changed", self, "on_phase_changed")
+    game_state.connect("game_state_workers_changed", self, "on_workers_changed")
 
 func on_phase_changed():
     match game_state.current_phase:
@@ -82,6 +84,10 @@ func on_phase_changed():
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseGather.self_modulate = gather_color_inactive
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseExecute.self_modulate = execute_color_inactive
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseDefend.self_modulate = defend_color_active
+
+func on_strength_changed():
+    $HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer/ShipsDisplay.text = str(game_state.ships)
+    $HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer/EfficiencyDisplay.text = "%1.f%%" % (game_state.efficiency * 100.0)
 
 func on_workers_changed(worker_type: int, new_value: int):
     match worker_type:

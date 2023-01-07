@@ -12,7 +12,9 @@ var admin_available: int = 0 setget set_admin_available
 
 var current_phase: int = Constants.PHASE_GATHER setget set_current_phase
 
-var ships: int = 0
+var ships: int = 0 setget set_ships
+
+var efficiency: float = 1.0 setget set_efficiency
 
 func set_labor_available(new_value):
     labor_available = new_value
@@ -33,3 +35,14 @@ func set_current_phase(new_value):
     current_phase = new_value
     emit_signal("game_state_changed")
     emit_signal("game_state_phase_changed")
+
+func set_ships(new_value):
+    ships = new_value
+    emit_signal("game_state_changed")
+    emit_signal("game_state_strength_changed")
+
+func set_efficiency(new_value):
+    efficiency = new_value
+    emit_signal("game_state_changed")
+    emit_signal("game_state_strength_changed")
+

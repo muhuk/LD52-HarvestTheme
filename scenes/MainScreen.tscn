@@ -161,40 +161,40 @@ text = "0"
 [node name="StrengthPanel" type="MarginContainer" parent="HUD/HudContainer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -97.0
+margin_left = -120.0
 margin_bottom = 46.0
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/HudContainer/StrengthPanel"]
-margin_right = 97.0
+margin_right = 120.0
 margin_bottom = 46.0
 
 [node name="GridContainer" type="GridContainer" parent="HUD/HudContainer/StrengthPanel/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 90.0
+margin_right = 113.0
 margin_bottom = 39.0
 columns = 2
 
-[node name="Label" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
+[node name="ShipsLabel" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
 margin_right = 70.0
 margin_bottom = 12.0
 text = "SHIPS"
 
-[node name="Label2" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
+[node name="ShipsDisplay" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
 margin_left = 74.0
-margin_right = 81.0
+margin_right = 106.0
 margin_bottom = 12.0
 text = "0"
 
-[node name="Label3" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
+[node name="EfficiencyLabel" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
 margin_top = 16.0
 margin_right = 70.0
 margin_bottom = 28.0
 text = "EFFICIENCY"
 
-[node name="Label4" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
+[node name="EfficiencyDisplay" type="Label" parent="HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer"]
 margin_left = 74.0
 margin_top = 16.0
-margin_right = 81.0
+margin_right = 106.0
 margin_bottom = 28.0
-text = "0"
+text = "100%"
