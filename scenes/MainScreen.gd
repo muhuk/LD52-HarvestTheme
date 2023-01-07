@@ -6,6 +6,8 @@ onready var world_map: Node2D = $Background/WorldMap
 
 onready var base_info_container: Control = $HUD/BaseInfo
 
+onready var end_turn_button: Button = $HUD/HudContainer/MarginContainer/EndTurnButton
+
 # gather, execute, defend
 export var gather_color_inactive: Color
 export var gather_color_active: Color
@@ -126,3 +128,14 @@ func on_workers_changed(worker_type: int, new_value: int):
             $HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer/AiDisplay.text = str(new_value)
         Constants.LB_ADMIN:
             $HUD/HudContainer/WorkersPanel/PanelContainer/GridContainer/AdminDisplay.text = str(new_value)
+
+
+func _on_EndTurnButton_pressed():
+    match game_state.current_phase:
+        Constants.PHASE_GATHER:
+            game_state.current_phase = Constants.PHASE_EXECUTE
+        Constants.PHASE_EXECUTE:
+            end_turn_button.disabled = true
+            game_state.current_phase = Constants.PHASE_DEFEND
+        Constants.PHASE_DEFEND:
+            game_state.current_phase = Constants.PHASE_GATHER
