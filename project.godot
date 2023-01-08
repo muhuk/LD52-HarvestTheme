@@ -40,7 +40,7 @@ _global_script_class_icons={
 
 config/name="AIvsAI"
 config/description="Artifical Intelligence vs Alien Invaders LD52 Jam Entry"
-run/main_scene="res://scenes/MainScreen.tscn"
+run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [display]
