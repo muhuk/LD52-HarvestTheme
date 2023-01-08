@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Object",
+"class": "CombatState",
+"language": "GDScript",
+"path": "res://CombatState.gd"
+}, {
+"base": "Object",
 "class": "Constants",
 "language": "GDScript",
 "path": "res://Constants.gd"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://Ship.gd"
 } ]
 _global_script_class_icons={
+"CombatState": "",
 "Constants": "",
 "GameState": "",
 "Ship": ""
@@ -32,8 +38,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="H4rv3st"
-config/description="LD52 Jam Entry"
+config/name="AIvsAI"
+config/description="Artifical Intelligence vs Alien Invaders LD52 Jam Entry"
 run/main_scene="res://scenes/MainScreen.tscn"
 config/icon="res://icon.png"
 

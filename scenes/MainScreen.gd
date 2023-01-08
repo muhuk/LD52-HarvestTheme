@@ -6,6 +6,7 @@ onready var world_map: Node2D = $Background/WorldMap
 
 onready var base_info_container: Control = $HUD/BaseInfo
 onready var build_menu_container: Control = $HUD/BuildMenu
+onready var combat_overlay: Control = $HUD/CombatOverlay
 
 onready var end_turn_button: Button = $HUD/HudContainer/MarginContainer/EndTurnButton
 onready var build_ship_button: Button = $HUD/BuildMenu/CenterContainer/PanelContainer/VBoxContainer/BuildShipButton
@@ -123,6 +124,8 @@ func on_phase_changed():
             end_turn_button.disabled = true
             unfreeze_end_turn_button()
             base_info_container.visible = true
+            build_menu_container.visible = false
+            combat_overlay.visible = false
         Constants.PHASE_EXECUTE:
             for base in base_info_container.get_children():
                 base.disable_harvesting()
@@ -133,6 +136,7 @@ func on_phase_changed():
             unfreeze_end_turn_button()
             base_info_container.visible = false
             build_menu_container.visible = true
+            combat_overlay.visible = false
             build_ship_button.disabled = not can_build_ship()
         Constants.PHASE_DEFEND:
             for base in base_info_container.get_children():
@@ -141,7 +145,9 @@ func on_phase_changed():
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseExecute.self_modulate = execute_color_inactive
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseDefend.self_modulate = defend_color_active
             end_turn_button.disabled = true
+            base_info_container.visible = false
             build_menu_container.visible = false
+            combat_overlay.visible = true
 
 
 func on_strength_changed():
