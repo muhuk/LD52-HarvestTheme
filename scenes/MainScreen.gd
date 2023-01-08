@@ -7,6 +7,7 @@ onready var world_map: Node2D = $Background/WorldMap
 onready var base_info_container: Control = $HUD/BaseInfo
 onready var build_menu_container: Control = $HUD/BuildMenu
 onready var combat_overlay: Control = $HUD/CombatOverlay
+onready var game_over_overlay: Node2D = $GameOverOverlay/GameOverOverlay
 
 onready var end_turn_button: Button = $HUD/HudContainer/MarginContainer/EndTurnButton
 onready var build_ship_button: Button = $HUD/BuildMenu/CenterContainer/PanelContainer/VBoxContainer/BuildShipButton
@@ -18,6 +19,8 @@ export var execute_color_inactive: Color
 export var execute_color_active: Color
 export var defend_color_inactive: Color
 export var defend_color_active: Color
+
+var menu_screen: String = "res://scenes/Menu.tscn"
 
 var base_marker_scene: PackedScene = load("res://scenes/BaseMarker.tscn")
 var base_controls_scene: PackedScene = load("res://scenes/BaseControls.tscn")
@@ -69,6 +72,7 @@ func process_combat(delta: float) -> void:
                 $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer/EnemyShipsDisplay.text = str(combat_state.enemy_ships())
             Constants.BATTLE_LOST:
                 $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/CombatLog.text = "WE LOST"
+                show_game_over_overlay()
             Constants.BATTLE_WON:
                 game_state.ships = combat_state.our_ships()
                 combat_state.free()
@@ -77,6 +81,17 @@ func process_combat(delta: float) -> void:
                 $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/CombatLog.text = "WE WON"
                 unfreeze_end_turn_button()
         combat_countdown += 0.25
+
+
+func show_game_over_overlay() -> void:
+    yield(get_tree().create_timer(0.2), "timeout")
+    game_over_overlay.show()
+    var tween: SceneTreeTween = get_tree().create_tween()
+    tween.set_loops()
+    tween.tween_property(game_over_overlay, "scale", Vector2(1.2, 1.2), 0.55).set_trans(Tween.TRANS_SINE)
+    tween.chain().tween_property(game_over_overlay, "scale", Vector2(1.0, 1.0), 0.35).set_trans(Tween.TRANS_SINE)
+    yield(get_tree().create_timer(1.5), "timeout")
+    get_tree().change_scene(menu_screen)
 
 
 func can_build_ship():
