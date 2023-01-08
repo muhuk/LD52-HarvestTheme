@@ -22,9 +22,12 @@ export var defend_color_active: Color
 var base_marker_scene: PackedScene = load("res://scenes/BaseMarker.tscn")
 var base_controls_scene: PackedScene = load("res://scenes/BaseControls.tscn")
 
+var turn: int = 0
 var game_state: GameState
 var phase_phase: float = 0.0
 var phase_phase_speed: float = 2.0
+var combat_state: CombatState
+var combat_countdown: float = 0.0
 
 
 func _ready():
@@ -38,6 +41,40 @@ func _ready():
 
 func _process(delta):
     pulse_phase(delta)
+    if combat_state != null:
+        process_combat(delta)
+
+
+func process_combat(delta: float) -> void:
+    combat_countdown -= delta
+    if combat_countdown < 0.0:
+        match combat_state.battle_state():
+            Constants.BATTLE_CONTINUE:
+                var tick_result: int = combat_state.fight_tick()
+                print(tick_result)
+                var msg: String
+                match tick_result:
+                    Constants.BATTLE_WE_HIT:
+                        msg = "We hit!"
+                    Constants.BATTLE_WE_MISSED:
+                        msg = "We missed."
+                    Constants.BATTLE_ENEMY_HIT:
+                        msg = "Enemy hit!"
+                    Constants.BATTLE_ENEMY_MISSED:
+                        msg = "Enemy missed."
+                $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/CombatLog.text = msg
+                $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer/OurShipsDisplay.text = str(combat_state.our_ships())
+                $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer/EnemyShipsDisplay.text = str(combat_state.enemy_ships())
+            Constants.BATTLE_LOST:
+                $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/CombatLog.text = "WE LOST"
+            Constants.BATTLE_WON:
+                game_state.ships = combat_state.our_ships()
+                combat_state.free()
+                combat_state = null
+                turn += 1
+                $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/CombatLog.text = "WE WON"
+                unfreeze_end_turn_button()
+        combat_countdown += 0.25
 
 
 func can_build_ship():
@@ -56,9 +93,10 @@ func create_bases():
     var location_bonus_bag: Array = [
         Constants.LB_LABOR,
         Constants.LB_LABOR,
+        Constants.LB_LABOR,
+        Constants.LB_LABOR,
         Constants.LB_AI,
-        Constants.LB_AI,
-        Constants.LB_ADMIN,
+
         Constants.LB_ADMIN,
        ]
     location_bonus_bag.shuffle()
@@ -126,6 +164,7 @@ func on_phase_changed():
             base_info_container.visible = true
             build_menu_container.visible = false
             combat_overlay.visible = false
+            combat_state = null
         Constants.PHASE_EXECUTE:
             for base in base_info_container.get_children():
                 base.disable_harvesting()
@@ -137,6 +176,7 @@ func on_phase_changed():
             base_info_container.visible = false
             build_menu_container.visible = true
             combat_overlay.visible = false
+            combat_state = null
             build_ship_button.disabled = not can_build_ship()
         Constants.PHASE_DEFEND:
             for base in base_info_container.get_children():
@@ -148,6 +188,11 @@ func on_phase_changed():
             base_info_container.visible = false
             build_menu_container.visible = false
             combat_overlay.visible = true
+            combat_state = CombatState.new()
+            combat_state.setup_armies(game_state.ships, Constants.ENEMY_SHIPS[turn])
+            $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/CombatLog.text = "Combat beginning."
+            $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer/OurShipsDisplay.text = str(combat_state.our_ships())
+            $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer/EnemyShipsDisplay.text = str(combat_state.enemy_ships())
 
 
 func on_strength_changed():
@@ -186,3 +231,4 @@ func _on_BuildShipButton_pressed():
         game_state.ai_available -= Constants.SHIP_COST[1]
         game_state.admin_available -= Constants.SHIP_COST[2]
         game_state.ships += 1
+    build_ship_button.disabled = not can_build_ship()

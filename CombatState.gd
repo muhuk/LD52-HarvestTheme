@@ -49,7 +49,7 @@ func battle_state() -> int:
             our_ships += 1
     assert(enemy_ships + our_ships == ships.size())
     var result: int
-    if our_ships > 0 and enemy_ships == 0:
+    if enemy_ships == 0:
         result = Constants.BATTLE_WON
     elif our_ships == 0:
         result = Constants.BATTLE_LOST

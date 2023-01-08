@@ -269,7 +269,6 @@ margin_right = 40.0
 margin_bottom = 11.0
 
 [node name="CombatOverlay" type="Control" parent="HUD"]
-visible = false
 margin_left = 320.0
 margin_top = 180.0
 margin_right = 360.0
@@ -281,41 +280,51 @@ margin_bottom = 40.0
 use_top_left = true
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD/CombatOverlay/CenterContainer"]
-margin_left = -7.0
-margin_top = -7.0
-margin_right = 7.0
-margin_bottom = 7.0
+margin_left = -41.0
+margin_top = -28.0
+margin_right = 41.0
+margin_bottom = 27.0
 
-[node name="GridContainer" type="GridContainer" parent="HUD/CombatOverlay/CenterContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/CombatOverlay/CenterContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 75.0
-margin_bottom = 33.0
+margin_bottom = 48.0
+
+[node name="GridContainer" type="GridContainer" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+margin_right = 68.0
+margin_bottom = 26.0
 columns = 2
 
-[node name="OurShipsLabel" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/GridContainer"]
+[node name="OurShipsLabel" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_right = 58.0
 margin_bottom = 11.0
 text = "Our Ships"
 
-[node name="OurShipsDisplay" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/GridContainer"]
+[node name="OurShipsDisplay" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_left = 62.0
 margin_right = 68.0
 margin_bottom = 11.0
 text = "0"
 
-[node name="EnemyShipsLabel" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/GridContainer"]
+[node name="EnemyShipsLabel" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_top = 15.0
 margin_right = 58.0
 margin_bottom = 26.0
 text = "Enemy Ships"
 
-[node name="EnemyShipsDisplay" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/GridContainer"]
+[node name="EnemyShipsDisplay" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 margin_left = 62.0
 margin_top = 15.0
 margin_right = 68.0
 margin_bottom = 26.0
 text = "0"
+
+[node name="CombatLog" type="Label" parent="HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer"]
+margin_top = 30.0
+margin_right = 68.0
+margin_bottom = 41.0
+text = "."
 
 [connection signal="pressed" from="HUD/HudContainer/MarginContainer/EndTurnButton" to="." method="_on_EndTurnButton_pressed"]
 [connection signal="pressed" from="HUD/BuildMenu/CenterContainer/PanelContainer/VBoxContainer/BuildShipButton" to="." method="_on_BuildShipButton_pressed"]
