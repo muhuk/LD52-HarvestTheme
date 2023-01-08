@@ -3,6 +3,10 @@ extends Node2D
 
 export(PackedScene) var main_screen
 
+func _ready():
+    $Music.play()
+
+
 func _on_QuitButton_pressed():
     $BeepSound.play()
     yield(get_tree().create_timer(0.2), "timeout")
