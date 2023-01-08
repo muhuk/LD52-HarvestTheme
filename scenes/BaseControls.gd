@@ -38,6 +38,12 @@ func enable_harvesting():
 func disable_harvesting():
     harvest_button.disabled = true
 
+func grow_population():
+    for idx in population:
+        if randf() <= Constants.POPULATION_GROWTH_CHANCE:
+            self.population = min(population + 1, population_cap_base)
+    update()
+
 func init(base_location_bonus_: int, population_cap: int):
     base_location_bonus = base_location_bonus_
     population = population_cap
