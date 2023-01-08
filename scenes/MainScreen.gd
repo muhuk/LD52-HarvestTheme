@@ -83,6 +83,7 @@ func process_combat(delta: float) -> void:
                 combat_state = null
                 turn += 1
                 $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/CombatLog.text = "WE WON"
+                $Music.play()
                 unfreeze_end_turn_button()
         combat_countdown += 0.25
 
@@ -200,6 +201,7 @@ func on_phase_changed():
             combat_state = null
             build_ship_button.disabled = not can_build_ship()
         Constants.PHASE_DEFEND:
+            $Music.stop()
             for base in base_info_container.get_children():
                 base.disable_harvesting()
             $HUD/HudContainer/PhasePanel/PanelContainer/VBoxContainer/PhaseGather.self_modulate = gather_color_inactive
