@@ -61,12 +61,16 @@ func process_combat(delta: float) -> void:
                 match tick_result:
                     Constants.BATTLE_WE_HIT:
                         msg = "We hit!"
+                        $ExplosionSound1.play()
                     Constants.BATTLE_WE_MISSED:
                         msg = "We missed."
+                        $ShootSound1.play()
                     Constants.BATTLE_ENEMY_HIT:
                         msg = "Enemy hit!"
+                        $ExplosionSound2.play()
                     Constants.BATTLE_ENEMY_MISSED:
                         msg = "Enemy missed."
+                        $ShootSound2.play()
                 $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/CombatLog.text = msg
                 $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer/OurShipsDisplay.text = str(combat_state.our_ships())
                 $HUD/CombatOverlay/CenterContainer/PanelContainer/VBoxContainer/GridContainer/EnemyShipsDisplay.text = str(combat_state.enemy_ships())
@@ -243,6 +247,7 @@ func unfreeze_end_turn_button():
 
 func _on_BuildShipButton_pressed():
     if can_build_ship():
+        $BeepSound.play()
         game_state.labor_available -= Constants.SHIP_COST[0]
         game_state.ai_available -= Constants.SHIP_COST[1]
         game_state.admin_available -= Constants.SHIP_COST[2]

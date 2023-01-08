@@ -57,6 +57,7 @@ func update():
     population_display.text = "%d/%d" % [population, population_cap_base]
 
 func _on_HarvestButton_pressed():
+    $HarvestSound.play()
     population -= 1
     if population <= 1:
         disable_harvesting()

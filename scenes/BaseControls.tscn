@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/BaseControls.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Pixellari_12.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/sound/harvest.wav" type="AudioStream" id=3]
 
 [node name="CampControls" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,16 +18,16 @@ margin_right = 69.0
 margin_bottom = 67.5
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-margin_left = 4.0
-margin_top = 17.0
-margin_right = 134.0
-margin_bottom = 118.0
+margin_left = 5.0
+margin_top = 18.0
+margin_right = 133.0
+margin_bottom = 117.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 123.0
-margin_bottom = 94.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 122.0
+margin_bottom = 93.0
 
 [node name="BaseName" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
 margin_right = 116.0
@@ -101,5 +102,8 @@ margin_top = 76.0
 margin_right = 116.0
 margin_bottom = 87.0
 text = "HARVEST"
+
+[node name="HarvestSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HarvestButton" to="." method="_on_HarvestButton_pressed"]
