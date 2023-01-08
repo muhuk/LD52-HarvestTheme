@@ -6,13 +6,13 @@ signal game_state_workers_changed(worker_type, new_value)
 signal game_state_phase_changed
 signal game_state_strength_changed
 
-var labor_available: int = 0 setget set_labor_available
-var ai_available: int = 0 setget set_ai_available
-var admin_available: int = 0 setget set_admin_available
+var labor_available: int = Constants.STARTING_LABOR setget set_labor_available
+var ai_available: int = Constants.STARTING_AI setget set_ai_available
+var admin_available: int = Constants.STARTING_ADMIN setget set_admin_available
 
 var current_phase: int = Constants.PHASE_GATHER setget set_current_phase
 
-var ships: int = 0 setget set_ships
+var ships: int = Constants.STARTING_SHIPS setget set_ships
 
 var efficiency: float = 1.0 setget set_efficiency
 

@@ -35,6 +35,9 @@ func _ready():
     setup_game_state()
     create_bases()
     ship_cost_info.text = "Ship cost %d labor, %d AI, %d admin." % Constants.SHIP_COST
+    call_deferred("on_workers_changed", Constants.LB_LABOR, game_state.labor_available)
+    call_deferred("on_workers_changed", Constants.LB_AI, game_state.ai_available)
+    call_deferred("on_workers_changed", Constants.LB_ADMIN, game_state.admin_available)
     call_deferred("on_phase_changed")
     call_deferred("on_strength_changed")
 
@@ -96,7 +99,6 @@ func create_bases():
         Constants.LB_LABOR,
         Constants.LB_LABOR,
         Constants.LB_AI,
-
         Constants.LB_ADMIN,
        ]
     location_bonus_bag.shuffle()

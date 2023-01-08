@@ -15,3 +15,9 @@ const SHIP_COST: Array = [5, 3, 2]
 const SHIP_HP: int = 1000
 const SHIP_HIT_CHANCE: float = 0.6
 const SHIP_DAMAGE: int = 50
+
+const STARTING_LABOR: int = 2
+const STARTING_AI: int = 1
+const STARTING_ADMIN: int = 1
+
+const STARTING_SHIPS: int = 0
