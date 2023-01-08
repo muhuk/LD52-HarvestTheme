@@ -54,7 +54,6 @@ func process_combat(delta: float) -> void:
         match combat_state.battle_state():
             Constants.BATTLE_CONTINUE:
                 var tick_result: int = combat_state.fight_tick()
-                print(tick_result)
                 var msg: String
                 match tick_result:
                     Constants.BATTLE_WE_HIT:
@@ -167,6 +166,7 @@ func on_phase_changed():
             build_menu_container.visible = false
             combat_overlay.visible = false
             combat_state = null
+            $HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer/EnemyDisplay.text = str(Constants.ENEMY_SHIPS[turn])
         Constants.PHASE_EXECUTE:
             for base in base_info_container.get_children():
                 base.disable_harvesting()
@@ -199,7 +199,6 @@ func on_phase_changed():
 
 func on_strength_changed():
     $HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer/ShipsDisplay.text = str(game_state.ships)
-    $HUD/HudContainer/StrengthPanel/PanelContainer/GridContainer/EfficiencyDisplay.text = "%1.f%%" % (game_state.efficiency * 100.0)
 
 
 func on_workers_changed(worker_type: int, new_value: int):
