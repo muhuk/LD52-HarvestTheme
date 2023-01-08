@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "GameState",
 "language": "GDScript",
 "path": "res://GameState.gd"
+}, {
+"base": "Object",
+"class": "Ship",
+"language": "GDScript",
+"path": "res://Ship.gd"
 } ]
 _global_script_class_icons={
 "Constants": "",
-"GameState": ""
+"GameState": "",
+"Ship": ""
 }
 
 [application]
